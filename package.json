@@ -20,8 +20,5 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.5",
     "nodemon": "^2.0.4"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
   }
 }
