@@ -67,4 +67,8 @@ routes.post('/classes/search', async (req, res) => {
   return res.send(resp)
 })
 
+routes.get('/', async (req, res) => {
+  return res.send('Salve!')
+})
+
 module.exports = routes
