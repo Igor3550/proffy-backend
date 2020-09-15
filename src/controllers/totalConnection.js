@@ -4,20 +4,24 @@ const Connection = require('../models/Connection')
 
 const router = express.Router()
 
-router.get('/list', async (req, res) => {
-  const connections = await Connection.find({})
-  const total = connections.length
+class ConnectionsController {
 
-  return res.send({ total })
-})
+  async list(req, res) {
+    const connections = await Connection.find({})
+    const total = connections.length
 
-router.post('/index', async (req, res) => {
-  try {
-    const connection = await Connection.create(req.body)
-    return res.send({ connection })
-  } catch (err) {
-    return res.status(400).send({ Error: "Erro ao criar conexão!" })
+    return res.send()
   }
-})
+
+  async create(req, res) {
+    try {
+      const connection = await Connection.create(req.body)
+      return res.send({ connection })
+    } catch (err) {
+      return res.status(400).send({ Error: "Erro ao criar conexão!" })
+    }
+  }
+}
 
 module.exports = app => app.use('/connections', router)
+module.exports = ConnectionsController
